@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:700,400,300);
+
+body {
+  /*property: value;*/
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 16px;
+  /*linehight related to fot size*/
+  line-height: 1.8;
+  /*use text align to align text and images on your site*/
+text-align: center;
+background-color: #d4d4d4;
+color: #585858
+}
+
+header {
+  /*padding takes 4 values in this order: top, right, bottom & left. Pushes content away from the inside edges of the box*/
+  padding: 200px 0 200px 0;
+  /*folder navigation='..'is coming out of a folder. '/'is going into a folder*/
+  background-image: url(../images/splash.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+nav{
+  background-color: #ffda0d;
+  padding: 20px 0 20px 0;
+}
+/*to style elements inside of specific parts u have to specify which part it is in*/
+nav a{
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0 20px 0 20px;
+  color: #444444;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #585858;
+}
+
+section{
+  background-color: #ffffff;
+  max-width: 720px;
+  /*elements have default properties - they are either inline or block. Inline elements like text, images , anchor tags and small can be centrally aligned using text align : center, block elements cant. To centrally alignblock elements, use margin. Margins make spec around the outside edges of an element.*/
+  margin: 0 auto 0 auto;
+padding: 40px;   /**/
+  /*auto makes sure that the margin on either side of an eleent remains the same, no matter the browser width so can be applied to left and right hand side*/
+}
+
+h2{
+  font-size: 35px;
+  margin: 40px 0 0 0;   /*can also use "margin-top: 40px"*/
+  text-transform: uppercase;
+  /*font size change to 35 px size*/
+  /*apply a margin to only the top*/
+  /*make the text uppercase*/
+}
+
+h3{ color: #a3a3a3;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+
+  /*change text colour to #a3a3a3*/
+  /*text uppercase*/
+  /*apply margin of 30 px to the bottom*/
+}
+/*to style more than one element at a time, seperate them using a comma, then apply the syles*/
+ p, blockquote{
+   font-size: 22px;
+   margin-left: 20px; margin-right: 20px;
+   font-weight: lighter;
+ }
+
+ footer{
+   background-color: #ffda0d;
+   padding: 40px 0 40px 0;
+   font-weight: lighter;
+
+ }
+
+ small{
+   display: block;
+   margin-top: 20px;
+ }
+
+ /*to apply styles to elements with a class="quote", we use a dot then the class name*/
+
+ .quote{
+   background-color: #ffda0d;
+ }
+
+/*Styles for JS burger menu*/
+.trigger {
+  display: none;
+
+}
+
+/*responsive design*/
+
+/*Use media quesries in CSS to apply styles according to screen width. Our site currently cuts off images at a width of 720px. So the styling needs to be changed at its width for any device*/
+/*This media query applies styles when we are on screens with a width of 720px*/
+@media screen and (max-width:720px) {
+  img, iframe{
+    max-width: 100%;
+  }
+
+  header {
+    padding: 100px 30px;
+  }
+
+  nav a{
+    display: block;
+    padding: 7px;
+  }
+  /*show trigger on nav head screens*/
+  .trigger{
+    display: block;
+    /*the position property allow us to change the position of elements. When set to absolute, we can use top, righht, bottom and left properties to move the element around the page*/
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: transform 4s ease;
+
+  }
+.trigger:hover{
+  transform: rotate(275deg);
+}
+  /*Hide nave bar*/
+
+  nav {
+    display: none;
+  }
+}
